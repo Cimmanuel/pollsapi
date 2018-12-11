@@ -76,10 +76,7 @@ class UserCreate(generics.CreateAPIView):
     serializer_class = UserSerializer
 
     # List users - for testing purpose
-    # def get(self, request):
-    #     users = User.objects.all()
-    #     data = UserSerializer(users, many=True).data
-    #     return Response(data)
+
 
 class LoginView(APIView):
     permission_classes = ()
