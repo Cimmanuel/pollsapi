@@ -6,7 +6,7 @@ from polls import apiviews
 class TestPoll(APITestCase):
     def setUp(self):
         # Using APIRequestFactory
-        # self.factory = APIRequestFactory()
+        self.factory = APIRequestFactory()
         # Using APIClient
         self.client = APIClient()
         self.view = apiviews.PollViewSet.as_view({'get': 'list'})
@@ -22,12 +22,12 @@ class TestPoll(APITestCase):
 
     def test_list(self):
         # Using APIRequestFactory
-        # request = self.factory.get(self.uri)
-        # request.user = self.user
-        # response = self.view(request)
+        request = self.factory.get(self.uri)
+        request.user = self.user
+        response = self.view(request)
         # Using APIClient
-        self.client.login(username='test', password='test')
-        response = self.client.get(self.uri)
+        # self.client.login(username='test', password='test')
+        # response = self.client.get(self.uri)
         self.assertEqual(
             response.status_code, 200, 
             'Expected Response Code 200, received {0} instead'.format(response.status_code)
