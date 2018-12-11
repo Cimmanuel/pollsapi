@@ -34,7 +34,7 @@ jobs:
           name: run tests
           command: |
             . apienv/bin/activate
-            cd polls
+            cd pollsapi
             python manage.py test
 
       - store_artifacts:
