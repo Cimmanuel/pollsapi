@@ -23,7 +23,7 @@ jobs:
             python3 -m venv apienv
             . apienv/bin/activate
             pip install --upgrade pip
-            pip install -r pollsapi/requirements.txt
+            pip install -r requirements.txt
 
       - save_cache:
           paths:
